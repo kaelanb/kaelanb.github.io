@@ -1,0 +1,31 @@
+.jojo{
+    background-color: #E6E7F2
+}
+
+.maincolor {
+    background-color: #3D4252;
+}
+.container-fluid-mod {
+    margin-top: 50px;
+    max-width: 850px;
+}
+
+.headers{
+    margin-bottom: 20px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.banner{
+    height: 160px;
+    background-image: url("images/blmountain2.jpg");
+    background-color: #FFFFFF;
+    margin-bottom: 40px;
+   
+}
+
+.quote{
+    font-size: 100%;
+}
