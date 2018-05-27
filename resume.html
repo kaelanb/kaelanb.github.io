@@ -6,6 +6,9 @@
 
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+        <script type="text/javascript" src="js/renderPDF.js"></script>
+<!--    <script type="text/javascript" src="js/resizePDF.js"></script>-->
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -13,49 +16,65 @@
         
         <title>Kaelan Barbolina</title>
     </head>
-    <body class="jojo">
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark maincolor" >
-        <div class="container">
-            <a class="navbar-brand" href="#">Kaelan B</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="index.html">Home</a>
-                    <a class="nav-item nav-link" href="projects.html">Projects</a>
-                    <a class="nav-item nav-link active" href="resume.html">About</a>
-                    <a class="nav-item nav-link" href="https://github.com/kaelanb" target="_blank"><i class="fab fa-github"></i> Github</a>
-                    
+    <body>
+        <div class="main">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark maincolor" >
+            <div class="container">
+                <a class="navbar-brand" href="resume.html">Kaelan B</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="index.html">Home</a>
+                        <a class="nav-item nav-link" href="projects.html">Projects</a>
+                        <a class="nav-item nav-link active" href="resume.html">About</a>
+                        <a class="nav-item nav-link" href="https://github.com/kaelanb" target="_blank"><i class="fab fa-github"></i> Github</a>
+                        
+                    </div>
                 </div>
             </div>
-        </div>
-        </nav>
-        
-        <div class="banner">
-            <div class="p-5 text-white text-center">
-                <h3>About Me</h3>
+            </nav>
+            
+            <div class="banner">
+                <div class="p-5 text-white text-center">
+                    <h3>About Me</h3>
+                </div>
             </div>
-        </div>
-        
-        <div class="container-fluid container-fluid-mod text-center">
-                <h4>Hi, I'm Kaelan Barbolina</h4>
-                <p>
-                    I'm from a small island in the Carribean called Curacao.<br/>
-                    I've always dreamed about moving to a bigger country to pursue my vision<br/>
-                    and that's exactly what I'm doing now in Toronto, Canada.
-                </p>
+            
+            <div class="container-fluid container-fluid-mod text-center">
+                    <h4>Hi, I'm Kaelan Barbolina</h4>
+                    <p>
+                        I'm from a small island in the Carribean called Curacao.<br/>
+                        I've always dreamed about moving to a bigger country to pursue my vision<br/>
+                        and that's exactly what I'm doing now in Toronto, Canada.
+                    </p>
+            </div>
+
+            <div class="container-fluid container-fluid-mod2 text-center mb-3"><a class="link-color" href="resume/KBresume2.pdf" target="_blank">My Resume <i class="fas fa-download"></i></a>
+                <div class="card">
+                    <div class="card-header maincolor" id="heading1">
+                        <h5 class="mb-0">
+                        <button class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                My Resume
+                        </button>
+                        </h5>
+                    </div>
+                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#dailyPosts">
+                        <div class="card-body">
+                            <canvas id="the-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="maincolor container-fluid text-white footer-style">
+            <div class="container-fluid text-center pt-3">
+                <p>© 2018 Kaelan Barbolina &nbsp;&nbsp;&nbsp; Contact: <a class="text-white" href="mailto:kbarbolina@protonmail.com">
+                kbarbolina@protonmail.com</a>.</p>
+            </div>
         </div>
 
-        <div class="container-fluid container-fluid-mod">
-            <a href="https://www.dropbox.com/s/1jafauwboj03eqr/KBresume.docx?dl=0" target="_blank">My Resume</a>
-            <h3>Experience</h3>
-            <div class="card text-black mb-3">
-                <div class="card-header">Languages:</div>
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                </div>
-            </div>
-        </div>
     </body>
 </html>
