@@ -291,15 +291,18 @@ body {
     margin: 0 auto;
 }
 
+/* Features Grid - Updated for 5 cards */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .feature-card {
     background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
+    padding: 35px;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(74, 124, 89, 0.1);
@@ -313,31 +316,32 @@ body {
 }
 
 .feature-icon {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background: linear-gradient(135deg, #4a7c59, #7fb069);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 30px;
+    margin: 0 auto 25px;
 }
 
 .feature-icon i {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: white;
 }
 
 .feature-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #2c3e34;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .feature-card p {
     color: #5a7063;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 /* Contact Section */
@@ -390,12 +394,13 @@ body {
     justify-content: center;
 }
 
+/* Progress Circle - Updated for 75% */
 .progress-circle {
     position: relative;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: conic-gradient(#4a7c59 0deg 90deg, #5a7063 90deg 360deg);
+    background: conic-gradient(#4a7c59 0deg 270deg, #5a7063 270deg 360deg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -551,6 +556,17 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .feature-card {
+        padding: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 20px 0;
@@ -599,6 +615,24 @@ body {
     
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature-card {
+        padding: 25px;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .feature-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.2rem;
     }
     
     .section-header h2 {
