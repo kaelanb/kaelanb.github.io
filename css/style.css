@@ -291,13 +291,40 @@ body {
     margin: 0 auto;
 }
 
-/* Features Grid - Updated for 5 cards */
+/* Features Grid - Optimized for 5 cards */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Better 5-card layout on larger screens */
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+    }
+    
+    .feature-card:nth-child(4),
+    .feature-card:nth-child(5) {
+        grid-column: span 1;
+    }
+    
+    .feature-card:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 2;
+        margin: 0 auto;
+        max-width: 320px;
+    }
+    
+    .feature-card:nth-child(5) {
+        grid-column: 3 / 4;
+        grid-row: 2;
+        margin: 0 auto;
+        max-width: 320px;
+    }
 }
 
 .feature-card {
