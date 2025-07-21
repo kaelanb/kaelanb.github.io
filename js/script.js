@@ -37,31 +37,58 @@ document.addEventListener('DOMContentLoaded', function() {
     const notifyForm = document.getElementById('notifyForm');
     
     if (notifyForm) {
-        notifyForm.addEventListener('submit', function(e) {
+        notifyForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const email = document.getElementById('email').value;
             
             if (email) {
-                // Simulate form submission
                 const button = notifyForm.querySelector('button');
                 const originalText = button.textContent;
                 
                 button.textContent = 'Submitting...';
                 button.disabled = true;
                 
-                setTimeout(() => {
+                try {
+                    // MailerLite embedded form submission
+                    const formData = new FormData();
+                    formData.append('fields[email]', email);
+                    formData.append('ml-submit', '1');
+                    formData.append('anticsrf', 'true');
+                    
+                    // Using your actual MailerLite form endpoint
+                    const response = await fetch('https://assets.mailerlite.com/jsonp/1677956/forms/160413571483699127/subscribe', {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors' // Required for MailerLite forms
+                    });
+                    
+                    // Since mode is 'no-cors', we can't check response status
+                    // So we assume success and show thank you message
                     button.textContent = 'Thank you!';
-                    button.style.background = '#48bb78';
+                    button.style.background = 'linear-gradient(135deg, #32cd32, #228b22)';
                     
                     setTimeout(() => {
                         hideNotifyModal();
                         notifyForm.reset();
                         button.textContent = originalText;
                         button.disabled = false;
-                        button.style.background = '#48bb78';
+                        button.style.background = '';
                     }, 1500);
-                }, 1000);
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    
+                    // Error handling
+                    button.textContent = 'Error - Try Again';
+                    button.style.background = 'linear-gradient(135deg, #ff6b6b, #ff5252)';
+                    button.disabled = false;
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                    }, 3000);
+                }
             }
         });
     }
